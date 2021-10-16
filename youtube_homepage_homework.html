@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: rgb(249, 249, 249);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .first {
+      width: 240px;
+      height: 50px;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      position: fixed;
+      top: 0px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 20px;
+      margin: 10px 10px;
+      float: left;
+    }
+
+    .ytlogo {
+      width: 90px;
+      margin: 0 10px;
+      position: absolute;
+    }
+
+    .twtxt {
+      font-size: 10px;
+      color: rgb(97, 97, 97);
+      position: absolute;
+      top: 5px;
+      left: 160px;
+    }
+
+    .sidebar {
+      width: 208px;
+      height: 880px;
+      color: rgb(0, 0, 0);
+      background: #fff;
+      padding: 0.2rem 1rem;
+      position: fixed;
+      left: 0;
+      top: 53%;
+      transform: translateY(-50%);
+      display: inline-block;
+      overflow-y: scroll;
+      z-index: 1;
+    }
+
+    .tag {
+      width: 200px;
+      height: 28px;
+    }
+
+    .logo1 {
+      width: 20px;
+      margin: 0px 25px 0 10px;
+      float: left;
+    }
+
+    .tagtxt {
+      padding: 0 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    label[for="login2"] {
+      width: 75px;
+      color: dodgerblue;
+      padding: 0.3rem 0.5rem;
+      margin: 0 0 0.5rem;
+      border: 1px solid dodgerblue;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      left: 10px;
+    }
+
+    .tagtxt1 {
+      padding: 0 0.6rem;
+      font-size: 0.8rem;
+      color: rgb(100, 100, 100);
+    }
+
+    .menutop {
+      width: 88%;
+      height: 115px;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 240px;
+      z-index: 1;
+    }
+
+    input[type="text"] {
+      appearance: none;
+      width: 600px;
+      height: 30px;
+      margin: 7px 0 0 0;
+      padding: 5px 15px;
+      border: 1px solid rgb(217, 217, 217);
+      font-size: 1rem;
+      color: rgb(97, 97, 97);
+      position: relative;
+      left: 22%;
+    }
+
+    label[for="searchlogo"] {
+      padding: 0 10px;
+      background: rgb(240, 240, 240);
+      border: 1px solid rgb(217, 217, 217);
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      top: 7px;
+      left: 950px;
+    }
+
+    .recpic {
+      width: 20px;
+      height: 20px;
+      padding: 8px;
+      border-radius: 50%;
+      background: rgb(245, 245, 245);
+      position: absolute;
+      top: 10px;
+      left: 1022px;
+    }
+
+    .menulogo1 {
+      width: 18px;
+      margin: 10px;
+      position: absolute;
+      top: 8px;
+      right: 170px;
+    }
+
+    .menulogo2 {
+      width: 15px;
+      margin: 10px;
+      position: absolute;
+      top: 8px;
+      right: 130px;
+    }
+
+    .loginlogo1 {
+      width: 25px;
+      margin: 0 3px;
+      float: left;
+    }
+
+    label[for="login1"] {
+      width: 70px;
+      color: dodgerblue;
+      padding: 0.5rem;
+      border: 1px solid dodgerblue;
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      right: 30px;
+    }
+
+    .menu {
+      padding: 0 1rem;
+    }
+
+    nav {
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: rgb(240, 240, 240);
+      font-size: 14px;
+      color: rgb(0, 0, 0);
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgb(217, 217, 217);
+      margin: 0.2rem 0.3rem;
+      border-radius: 1.5rem;
+      display: inline-block;
+      line-height: 20px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      background: rgb(220, 220, 220);
+      border: 1px solid rgb(200, 200, 200);
+    }
+
+    nav a:active {
+      color: #fff;
+      background: #000;
+    }
+
+    .main {
+      width: 87.3%;
+      background-color: rgb(249, 249, 249);
+      position: relative;
+      left: 240px;
+      top: 100px;
+    }
+
+    .container {
+      width: 91%;
+      background-color: rgb(249, 249, 249);
+      margin: 10px auto;
+      padding: 10px 70px;
+      font-size: 0;
+      position: relative;
+      top: 300px;
+    }
+
+    .genres {
+      font-size: 1.2rem;
+      padding: 0;
+      margin: 5px 10px 20px;
+    }
+
+    .col {
+      width: 350px;
+      height: 310px;
+      margin: 10px 5px;
+      padding: 0px 8px;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .videopic {
+      width: 360px;
+    }
+
+    .box {
+      position: relative;
+      top: 5px;
+    }
+
+    .channelpic {
+      width: 35px;
+      height: 35px;
+      margin: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+    }
+
+    .txt {
+      width: 280px;
+      position: absolute;
+      top: -15px;
+      left: 60px;
+    }
+
+    .title {
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .pp {
+      font-size: 16px;
+      color: rgb(97, 97, 97);
+      position: absolute;
+      top: 60%;
+    }
+
+    .ad {
+      width: 88.5%;
+      height: 190px;
+      margin: 10px 0 50px;
+      padding: 35px 95px;
+      background: black;
+      position: absolute;
+    }
+
+    .yt-music-pic {
+      width: 320px;
+    }
+
+    .adtxt {
+      color: #fff;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    label[for="sub"] {
+      color: white;
+      padding: .5rem .9rem;
+      border: 2px solid #fff;
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      top: 180px;
+    }
+
+    #sub {
+      display: none;
+    }
+
+    span {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 1.5rem;
+      color: #000;
+      background: rgb(180, 180, 180);
+      text-align: center;
+      line-height: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="first">
+    <img class="logo" src="https://cdn-icons-png.flaticon.com/512/545/545705.png">
+    <img class="ytlogo" src="https://p2.bahamut.com.tw/B/2KU/16/b93da40e5bc05d0f96ad9560aa1847g5.PNG">
+    <p class="twtxt">TW</p>
+  </div>
+
+  <div class="sidebar">
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/69/69962.png">
+      <p class="tagtxt">首頁</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/633/633839.png">
+      <p class="tagtxt">探索</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/907/907837.png">
+      <p class="tagtxt">訂閱內容</p>
+    </div>
+
+    <hr>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/4146/premium/4146831.png?token=exp=1634391124~hmac=21b59d0f984fbb6bdb238b2e7021e0e5">
+      <p class="tagtxt">媒體庫</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2961/premium/2961948.png?token=exp=1634391362~hmac=1f6a7b3def5f9ece9d07e2217f80803a">
+      <p class="tagtxt">觀看紀錄</p>
+    </div>
+
+    <hr>
+
+    <p class="tagtxt">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</p>
+    <label for="login2">
+      <img class="loginlogo1" src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png">登入
+    </label>
+
+    <hr>
+
+    <p class="tagtxt">YOUTUBE 精選</p>
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/876/876817.png">
+      <p class="tagtxt">音樂</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2951/premium/2951189.png?token=exp=1634391478~hmac=586a1e0577fe1b2f0f7c106087dd96aa">
+      <p class="tagtxt">體育</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/686/686589.png">
+      <p class="tagtxt">遊戲</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/860/860334.png">
+      <p class="tagtxt">電影</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/2983/2983803.png">
+      <p class="tagtxt">新聞</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2330/premium/2330100.png?token=exp=1634391743~hmac=e8e0093ed460640acc9fe4f2b1ad4c91">
+      <p class="tagtxt">直播</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/1687/1687626.png">
+      <p class="tagtxt">360 度影片</p>
+    </div>
+
+    <hr>
+
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/992/992651.png">
+      <p class="tagtxt">瀏覽頻道</p>
+    </div>
+
+    <hr>
+
+    <p class="tagtxt">更多 YOUTUBE 功能</p>
+    <div class="tag">
+      <img class="logo1" src="https://cdn-icons-png.flaticon.com/512/1384/1384086.png">
+      <p class="tagtxt">YouTube Premium</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2330/premium/2330100.png?token=exp=1634391743~hmac=e8e0093ed460640acc9fe4f2b1ad4c91">
+      <p class="tagtxt">直播</p>
+    </div>
+
+    <hr>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2040/premium/2040504.png?token=exp=1634391956~hmac=306366c990c00dba6ba935ac2f83d08c">
+      <p class="tagtxt">設定</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/2814/premium/2814368.png?token=exp=1634392006~hmac=7d12b2d759983c9360987ec00b17b406">
+      <p class="tagtxt">檢舉紀錄</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/1620/premium/1620741.png?token=exp=1634392079~hmac=9c0c1c57d3dd22faedf4f1761429f11e">
+      <p class="tagtxt">說明</p>
+    </div>
+
+    <div class="tag">
+      <img class="logo1"
+        src="https://cdn-icons.flaticon.com/png/512/3574/premium/3574209.png?token=exp=1634392126~hmac=69e4084929d76924af7977a6f32f6738">
+      <p class="tagtxt">提供意見</p>
+    </div>
+
+    <hr>
+
+    <p class="tagtxt1">簡介 媒體 版權 與我們聯絡<br>
+      創作者 廣告 開發人員</p>
+    <p class="tagtxt1">條款 隱私權 政策與安全性<br>
+      YouTube 運作方式 測試新功能</p>
+    <p class="tagtxt1">© 2021 Google LLC</p>
+
+
+  </div>
+
+  <div class="menutop">
+
+    <label for="search">
+      <input id="search" type="text" value="搜尋">
+    </label>
+    <label for="searchlogo"><img class="logo" src="https://cdn-icons-png.flaticon.com/512/622/622605.png"> </label>
+    <input id="searchlogo" type="checkbox">
+    <img class="recpic" src="https://cdn-icons-png.flaticon.com/512/1251/1251671.png">
+
+    <img class="menulogo1" src="https://cdn-icons-png.flaticon.com/512/159/159704.png">
+    <img class="menulogo2" src="https://cdn-icons-png.flaticon.com/512/2089/2089793.png">
+    <label for="login1">
+      <img class="loginlogo1" src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png">登入
+    </label>
+
+    <hr>
+    <nav class="menu">
+      <a href="#"> 全部</a>
+      <a href="#">音樂</a>
+      <a href="#">直播中</a>
+      <a href="#">卡通</a>
+      <a href="#">ASMR</a>
+      <a href="#">饒舌</a>
+      <a href="#">手工藝</a>
+      <a href="#">美容訣竅</a>
+      <a href="#">寵物</a>
+      <a href="#">最新上傳</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="ad">
+      <img class="yt-music-pic"
+        src=" https://www.gstatic.com/youtube/img/promos/growth/c117e153c0f61ba6e181349f4583a3ca73508d436feb398300ee138eae8c3286_640x48.png">
+      <p class="adtxt">千萬別錯過 Music Premium 學生方案</p>
+      <label for="sub">立即訂閱</label>
+      <input id="sub" type="checkbox">
+      <span>X</span>
+    </div>
+
+    <div class="container">
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/HclKpbdM1j4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDUYJ6s-3lgjUzhGDRNi2RHIdFmFw">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/xR4FUeQIO4JzkwYSQmYoOY5knEkCVtp5dGgx3tL35MSnLJWouSfrOIVw_TeciWXD5nODAdXkUA=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">🎧Dance Music Mix | Club Remixs🎧 #DENONBU #電音部</p>
+            <p class="pp">電音部チャンネル<br>
+              觀看次數：3.5萬次．1週前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic "
+          src="https://i.ytimg.com/vi/AYBirhBhPJk/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDANNs4LuKNwtiZbozokKbkO4bXcQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLSfcLtqA2N_TLg1qIpA15moavi9Z4rMBpqwLMWvNPU_SNEnvxfFPLyHE3Tibj-E=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">pop enemy (feat. Shinpei Nasuno)</p>
+            <p class="pp">Various Artists - Topic<br>
+              觀看次數：2.7萬次．2個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/_crezDzuriM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYtlQiWDKy9uT9NkyxvihgwKu1NQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTUAukKnJFFcvi5xW45dgR-trUTi3YSWHy5YnsDwbJcquTnOeiffpkOqVkAW_RY=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Eat Sleep Dance (feat. Moe Shop)</p>
+            <p class="pp">Various Artists - Topic<br>
+              觀看次數：3.9萬次．3週前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/lm1Lg-dM3xE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyKgtJJJdjILSUg2G0XR3xIiMx-w">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLScB-2fi4QVWF4i8cRh7Tp6Njt-DClNJF0ensNfYA=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">あつまれ どうぶつの森 Direct 告知映像 [Nintendo Direct 2021.9.24] </p>
+            <p class="pp">Nintendo 公式チャンネル<br>
+              觀看次數：99萬次．3天前</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/CYZfhj-LDRk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDox42pcRpxKHN1VFgII1V_t8X1lA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTMwK0SDb2rSBZ3RPLAuPy8g3Qb8WTk0Lypmm85=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">ヒプノシスマイク 「Stella」Fling Posse</p>
+            <p class="pp">Channelヒプノシスマイク<br>
+              觀看次數：981萬次．2年前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/GJgyw7Z2wjI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRceKNrCOJkd0H0nRZRJb98g-aaA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTMwK0SDb2rSBZ3RPLAuPy8g3Qb8WTk0Lypmm85=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">シブヤ・ディビジョン“Fling Posse”「Black Journey」Trailer</p>
+            <p class="pp">Channelヒプノシスマイク<br>
+              觀看次數：238萬次．7個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/68UlL5Op9q4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBizvBk3oGxoU2PYxkNkrV5F3CTQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/wPAy8Es5Yul6nCT8aWJNyfyOzhEzdI5G5qKym9oiAgsIOQzXLr8dNgPv4UyTOvuIZ7HIsXohag=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Moe Shop - WWW (feat. EDOGA-SULLIVAN)</p>
+            <p class="pp">Moe Shop<br>
+              觀看次數：273萬次．1年前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/VBaiDrncZPE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDyU5N9m7KusJXBPjB8QJ9Lq3RzrA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/6qqP8VJIIInEsQ36qO2hBecxD_eghfg8I_3ouATCuJ92_NS7VYK5pr47DRQsJpFslAjy8R-i=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Be with the world</p>
+            <p class="pp">Photon Maiden<br>
+              觀看次數：18萬次．4個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="col">
+        <p class="genres">發燒影片</p>
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/HclKpbdM1j4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLDUYJ6s-3lgjUzhGDRNi2RHIdFmFw">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/xR4FUeQIO4JzkwYSQmYoOY5knEkCVtp5dGgx3tL35MSnLJWouSfrOIVw_TeciWXD5nODAdXkUA=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">🎧Dance Music Mix | Club Remixs🎧 #DENONBU #電音部</p>
+            <p class="pp">電音部チャンネル<br>
+              觀看次數：3.5萬次．1週前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic "
+          src="https://i.ytimg.com/vi/AYBirhBhPJk/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDANNs4LuKNwtiZbozokKbkO4bXcQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLSfcLtqA2N_TLg1qIpA15moavi9Z4rMBpqwLMWvNPU_SNEnvxfFPLyHE3Tibj-E=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">pop enemy (feat. Shinpei Nasuno)</p>
+            <p class="pp">Various Artists - Topic<br>
+              觀看次數：2.7萬次．2個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/_crezDzuriM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYtlQiWDKy9uT9NkyxvihgwKu1NQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTUAukKnJFFcvi5xW45dgR-trUTi3YSWHy5YnsDwbJcquTnOeiffpkOqVkAW_RY=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Eat Sleep Dance (feat. Moe Shop)</p>
+            <p class="pp">Various Artists - Topic<br>
+              觀看次數：3.9萬次．3週前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/lm1Lg-dM3xE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyKgtJJJdjILSUg2G0XR3xIiMx-w">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLScB-2fi4QVWF4i8cRh7Tp6Njt-DClNJF0ensNfYA=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">あつまれ どうぶつの森 Direct 告知映像 [Nintendo Direct 2021.9.24] </p>
+            <p class="pp">Nintendo 公式チャンネル<br>
+              觀看次數：99萬次．3天前</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+
+    <div class="container">
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/CYZfhj-LDRk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDox42pcRpxKHN1VFgII1V_t8X1lA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTMwK0SDb2rSBZ3RPLAuPy8g3Qb8WTk0Lypmm85=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">ヒプノシスマイク 「Stella」Fling Posse</p>
+            <p class="pp">Channelヒプノシスマイク<br>
+              觀看次數：981萬次．2年前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/GJgyw7Z2wjI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRceKNrCOJkd0H0nRZRJb98g-aaA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/ytc/AKedOLTMwK0SDb2rSBZ3RPLAuPy8g3Qb8WTk0Lypmm85=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">シブヤ・ディビジョン“Fling Posse”「Black Journey」Trailer</p>
+            <p class="pp">Channelヒプノシスマイク<br>
+              觀看次數：238萬次．7個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/68UlL5Op9q4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBizvBk3oGxoU2PYxkNkrV5F3CTQ">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/wPAy8Es5Yul6nCT8aWJNyfyOzhEzdI5G5qKym9oiAgsIOQzXLr8dNgPv4UyTOvuIZ7HIsXohag=s68-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Moe Shop - WWW (feat. EDOGA-SULLIVAN)</p>
+            <p class="pp">Moe Shop<br>
+              觀看次數：273萬次．1年前</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img class="videopic"
+          src="https://i.ytimg.com/vi/VBaiDrncZPE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDyU5N9m7KusJXBPjB8QJ9Lq3RzrA">
+        <div class="box">
+          <img class="channelpic"
+            src="https://yt3.ggpht.com/6qqP8VJIIInEsQ36qO2hBecxD_eghfg8I_3ouATCuJ92_NS7VYK5pr47DRQsJpFslAjy8R-i=s88-c-k-c0x00ffffff-no-rj">
+          <div class="txt">
+            <p class="title">Be with the world</p>
+            <p class="pp">Photon Maiden<br>
+              觀看次數：18萬次．4個月前</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+    </div>
+
+</body>
+
+</html>
